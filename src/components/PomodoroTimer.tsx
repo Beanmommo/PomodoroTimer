@@ -5,6 +5,7 @@ function PomodoroTimer() {
 
     let pomodoro= "25:00";
     let time = 25*60; // 25mins  
+    //timer value
     const [timer_display, setDisplay] = useState(pomodoro)
     
 
@@ -16,7 +17,7 @@ function PomodoroTimer() {
     const updateTimer = () => {
         let minutes = Math.floor(time/60)
         let seconds = time % 60
-        setDisplay(`${minutes}:${seconds}`)
+        setDisplay(`${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`)
         console.log(timer_display)
         //document.getElementById("timer-display")?.textContent = timer_display
         if (time == 0) {
